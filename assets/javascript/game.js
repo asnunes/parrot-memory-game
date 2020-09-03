@@ -4,35 +4,24 @@ document.addEventListener("DOMContentLoaded", function () {
   window.firstCard = null;
   window.freezeBoard = false;
 
-
-  console.log(randomParrots);
-
   function renderCards(randomParrots) {
-    var memoryGame = document.querySelector('.memory-game');
-
     for (var i = 0; i < randomParrots.length; i++) {
-      renderCard(memoryGame, randomParrots[i]);
+      renderCard(randomParrots, i);
     }
   }
 
-  function renderCard(memoryGame, parrot) {
-    var card = document.createElement('div');
-    card.classList.add("card");
+  function renderCard(randomParrots, index) {
+    var parrot = randomParrots[index];
+
+    var card = document.querySelectorAll('.card')[index];
     card.dataset.parrot = parrot;
     card.addEventListener('click', onCardClick);
-    memoryGame.appendChild(card);
 
-    var frontFace = document.createElement('img');
+    var frontFace = card.querySelector('.front-face').firstElementChild;
     frontFace.setAttribute('src', "assets/images/front.png");
-    frontFace.setAttribute('alt', "front card face");
-    frontFace.classList.add("front-face");
-    card.appendChild(frontFace);
 
-    var backFace = document.createElement('img');
+    var backFace = card.querySelector('.back-face').firstElementChild;
     backFace.setAttribute('src', "assets/images/" + parrot + "parrot.gif");
-    backFace.setAttribute('alt', "back card face");
-    backFace.classList.add("back-face");
-    card.appendChild(backFace);
   }
 
   function onCardClick() {
