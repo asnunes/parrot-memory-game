@@ -33,3 +33,17 @@ img {
   display: block;
   margin: auto;
 }
+
+.back-face {
+  display: none;
+}
+
+.flipped .back-face {
+  display: inline;
+}
+
+.flipped .front-face {
+  display: none;
+}
+
+
