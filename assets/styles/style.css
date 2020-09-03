@@ -1,0 +1,12 @@
+body {
+  background-color: #EEF9BF;
+}
+
+.title {
+  font-size: 72pt;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #75B79E;
+  text-align: center;
+  margin-top: 2%;
+}
